@@ -1,0 +1,44 @@
+@import './globals/variables.scss';
+@import './globals/resets.scss';
+@import './globals/mixins.scss';
+
+div.wr {
+    header.wr-header {
+        height: $height-header;
+        padding-bottom: 0.5em;
+        background-color: $color-light;
+        box-shadow: $box-shadow;
+        @include display-flex-center {
+            flex-direction: column;
+        }
+        ul {
+            li {
+                float: left;
+                margin: 0 1em;
+                a {
+                    color: $color-gray;
+                    font-size: $font-size-all;
+                    position: relative;
+                    padding-bottom: 0.2em;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        background-color: $color-gray;
+                        bottom: 0;
+                        transition: all 0.3s linear;
+                        transform: scaleX(0);
+                        opacity: 0;
+                    }
+                    &:hover {
+                        &::before {
+                            transform: scaleX(1);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
