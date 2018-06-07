@@ -4,3 +4,16 @@
     align-items: center;
     @content;
 }
+
+@mixin custom-nav {
+    ul {
+        li {
+            float: left;
+            margin: 0 1em;
+            a {
+                color: $color-gray;
+                font-size: $font-size-all;
+            }
+        }
+    }
+}
